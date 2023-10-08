@@ -47,8 +47,9 @@ const ItemCircle = styled(motion.span)`
 
 function Header() {
   const homeMatch = useMatch("/");
-  const comingSoonMatch = useMatch("coming-soon");
-  const nowPlayingMatch = useMatch("now-playing");
+  const popularMatch = useMatch("popular/*");
+  const comingSoonMatch = useMatch("coming-soon/*");
+  const nowPlayingMatch = useMatch("now-playing/*");
 
   return (
     <Navigation>
@@ -56,7 +57,7 @@ function Header() {
       <Items>
         <Item>
           <Link to="/">POPULAR</Link>
-          {homeMatch && <ItemCircle layoutId="itemCircle" />}
+          {(homeMatch || popularMatch) && <ItemCircle layoutId="itemCircle" />}
         </Item>
         <Item>
           <Link to="coming-soon">COMING SOON</Link>

@@ -67,6 +67,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 50px;
+  user-select: none;
 }
 a {
   text-decoration:none;
